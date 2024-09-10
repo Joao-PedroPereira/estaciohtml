@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="João Pedro Pereira" />
+    <meta name="description" content="Projeto site de compras" />
+    <title>Projeto</title>
+    <style type="text/css">
+        html { font-size: 20px;
+        font-family: 'Verdana', sans-serif; }
+        h1 { font-size: 30px;
+        margin: 0;
+        padding: 20px 0;
+        color: #e2b434;
+        text-shadow: 3px 3px 1px black; }
+        h2 { font-size: 20px;
+        margin: 0;
+        padding: 20px 0;
+        color: #e2b434;
+        text-shadow: 3px 3px 1px black; }
+        html { background-color: #6d5000; }
+        body { width: 600px;
+        margin: 0 auto;
+        background-color: #976f00;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black; }
+        fieldset {
+            background-color: #FFF;
+        }
+        table { font-size: 10px;
+        background-color: #d19900; }
+        .botao { font-size: 1.5em;
+background: rgb(134, 81, 0);
+border: 0;
+margin-bottom: 1em;
+color: #FFF;
+padding: 0.2em 0.6em;
+box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+text-shadow: 1px 1px 1px rgba(0,0,0,0.5);}
+</style>
+</head>
+<body>
+    <a name="topo">
+    <h1>Informações</h1>
+    </a>
+    <p>Este é um site para a realização de compras de produtos de um mercado, abaixo você deverá preencher um formulário com seus dados e os dados de sua compra</p>
+    <figure>
+        <img src="imagem1.jpg" alt="Foto das mercadorias" width="1000" height="500"/>
+    </figure>
+    <h2>Formulário de Compra</h2>
+    <form action="#" method="post" oninput="total.value = (arroz.valueAsNumber * 10) + (feijao.valueAsNumber * 12) + (macarrao.valueAsNumber * 11) + (acucar.valueAsNumber * 9) + (sal.valueAsNumber * 8)">
+        <fieldset>
+            <h3>Dados do Comprador</h3>
+            <div class="campo">
+                <label>Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome..." style="width: 20em;" required /><br />
+            </div><br />
+            </div>
+            <div class="campo">
+                <label>E-mail</label>
+                <input type="email" id="email" name="email" required /><br /><br /></div>
+            <div class="campo">
+                <label>Repita o e-mail</label>
+                <input type="email" id="email_repeti" name="email_repeti" required oninput="check(this)" /><br /><br />
+            </div>
+            <div clas="campo">
+                <label>CPF</label>
+                <input type="text" id="cpf" name="cpf" pattern="[0-9]{11}" required/><br /><br />
+            </div>
+            <div clas="campo"></div>
+                <label>CEP</label>
+                <input type="text" id="CEP" name="CEP" pattern="[0-9]{8}" required/><br /><br />
+            </div>
+            <h3>Produtos Comprados</h3>
+            <table border="1">
+            <thead>
+                <tr><th colspan="6">Tabela de produtos</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>Produtos</th>
+                    <td>Arroz</td>
+                    <td>Feijão</td>
+                    <td>Macarrão</td>
+                    <td>Açúcar</td>
+                    <td>Sal</td>
+                    </tr>
+                    <tr>
+                    <th>Preço</th>
+                    <td>$10</td>
+                    <td>$12</td>
+                    <td>$11</td>
+                    <td>$9</td>
+                    <td>$8</td>
+                    </tr>
+                    <tr>
+                    <th>Quantidade Disponível</th>
+                    <td>100</td>
+                    <td>80</td>
+                    <td>90</td>
+                    <td>90</td>
+                    <td>110</td>
+                    </tr>
+                    </tbody>
+                    </table><br /><br />
+            <div class="campo">
+                <label>Arroz</label>
+                <input type="number" id="arroz" name="arroz" value="0" min="0" max="100" required/><br /><br />
+            </div>
+            <div class="campo">
+                <label>Feijão</label>
+                <input type="number" id="feijao" name="feijao" value="0" min="0" max="80" required /><br /><br />
+            </div>
+            <div class="campo">
+                <label>Macarrão</label>
+                <input type="number" id="macarrao" name="macarrao" value="0" min="0" max="90" required /><br /><br />
+            </div>
+            <div class="campo">
+                <label>Açúcar</label>
+                <input type="number" id="acucar" name="açucar" value="0" min="0" max="90" required /><br /><br />
+            </div>
+            <div class="campo">
+                <label>Sal</label>
+                <input type="number" id="sal" name="sal" value="0" min="0" max="110" required /><br /><br />
+            </div>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label>Total estimado</label>
+                    R$<output id="total" name="total">00</output><br />
+                </div>
+            </fieldset><br />
+            <div class="campo">
+                <label>Mensagem</label>
+                <textarea name="message" style="width: 40em;" placeholder="Algum comentário extra?"></textarea><br /><br />
+            </div>
+            <div class="campo">
+                <label>Código promocional</label>
+                <input type="text" id="promo" name="promo" maxlength="6" pattern="[A-Za-z0-9]{6}" title="Código promocional consiste em 6 caracteres alfanuméricos." /><br /> <br/>
+            </div>
+            <button class="botao submit" type="submit" name="submit">Requer compra</button>
+        </fieldset>
+    </form> 
+    <a href="#topo">
+        <p>Voltar ao início</p>
+    </a>
+</body>
+</html>
