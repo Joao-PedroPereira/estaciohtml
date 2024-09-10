@@ -13,9 +13,10 @@
     <figure>
         <img src="imagem1.jpg" alt="Foto das mercadorias" width="1000" height="500"/>
     </figure>
-    <form action="#" method="post" oninput="total.value = (noites.valueAsNumber * 250) + ((hospede.valueAsNumber - 1) * 50)">
+    <form action="#" method="post" oninput="total.value = (arroz.valueAsNumber * 10,90) + (feijao.valueAsNumber * 12,65) + (macarrao.valueAsNumber * 11,35) + (açucar.valueAsNumber * 9,20) + (sal.valueAsNumber * 8,30)">
         <fieldset>
             <legend>Dados da compra</legend>
+            <h3>Dados do Comprador</h3>
             <div class="campo">
                 <label>Nome:</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite o nome..." style="width: 20em;" required /><br />
@@ -30,23 +31,32 @@
             </div>
             <div clas="campo">
                 <label>CPF</label>
-                <input type="text" id="cpf" name="cpf" pattern="[0-9]" min="11" max="11" required/><br /><br />
+                <input type="text" id="cpf" name="cpf" pattern="[0-9]{11}" required/><br /><br />
             </div>
             <div clas="campo"></div>
                 <label>CEP</label>
-                <input type="text" id="CEP" name="CEP" pattern="[0-9]" required/><br /><br />
+                <input type="text" id="CEP" name="CEP" pattern="[0-9]{8}" required/><br /><br />
+            </div>
+            <h3>Produtos Comprados</h3>
+            <div class="campo">
+                <label>Arroz</label>
+                <input type="number" id="arroz" name="arroz" value="1" min="1" max="100" required/><br /><br />
             </div>
             <div class="campo">
-                <label>Data de chegada</label>
-                <input type="date" id="dt_chegada" name="dt_chegada" required /><br /><br />
+                <label>Feijão</label>
+                <input type="number" id="feijao" name="feijao" value="1" min="1" max="80" required /><br /><br />
             </div>
             <div class="campo">
-                <label>Número de noites (R$250,00 por noite):</label>
-                <input type="number" id="noites" name="noites" value="1" min="1" max="30" required/><br /><br />
+                <label>Macarrão</label>
+                <input type="number" id="macarrao" name="macarrao" value="1" min="1" max="90" required /><br /><br />
             </div>
             <div class="campo">
-                <label>Número de hóspedes (R$50,00 adicional por noite)</label>
-                <input type="number" id="hospede" name="hospede" value="1" min="1" max="4" required /><br /><br />
+                <label>Açúcar</label>
+                <input type="number" id="açucar" name="açucar" value="1" min="1" max="90" required /><br /><br />
+            </div>
+            <div class="campo">
+                <label>Sal</label>
+                <input type="number" id="sal" name="sal" value="1" min="1" max="110" required /><br /><br />
             </div>
             <fieldset class="grupo">
                 <div class="campo">
@@ -62,7 +72,7 @@
                 <label>Código promocional</label>
                 <input type="text" id="promo" name="promo" maxlength="6" pattern="[A-Za-z0-9]{6}" title="Código promocional consiste em 6 caracteres alfanuméricos." /><br /> <br/>
             </div>
-            <button class="botao submit" type="submit" name="submit">Requer reserva</button>
+            <button class="botao submit" type="submit" name="submit">Requer compra</button>
         </fieldset>
     </form> 
     <a href="#topo">
