@@ -1,3 +1,3 @@
 Nome do Aluno: João Pedro Pereira
 
-Descrição do Projeto: Uma simulação de um site de venda de mercadorias online, possui uma breve introdução e um formulário de compra de produtos
+Descrição do Projeto: Uma simulação de um site de venda de avaliação e review de jogos online que contém a sinopse dos jogos junto de uma lista
